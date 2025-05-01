@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>My to do list</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="content">
+    <h1>Update Task</h1>
+
+    
+    <div class="forms">
+        <form action="/update/{{task.id}}" method="POST">
+            <label for="content">Task:</label>
+            <input type="text" name="content" id="content" value="{{task.content}}">
+            <label for="assigned_by">Assigned By:</label>
+            <input type="text" name="assigned_by" id="assigned_by" value="{{task.assigned_by}}">
+            <!-- <input type="submit" value="Add Task"> -->
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock %}

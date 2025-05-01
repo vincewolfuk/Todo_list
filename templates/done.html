@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Completed Tasks</title>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="content">
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Assigned by</th>
+        <th>Started</th>
+        <th>Finished</th>            
+    </tr>
+
+    {%for done_task in done_task%}
+    <tr>
+        <td>{{ done_task.content }}</td>
+        <td>{{ done_task.assigned_by}}</td>
+        <td>{{ done_task.original_date_created.date() }}</td>
+        <td>{{ done_task.date_created.date() }}</td>            
+
+      
+    </tr>
+    {% endfor %}
+</table>
+<a href="/">Back to main page</a>
+
+</div>
+
+
+
+{% endblock %}
